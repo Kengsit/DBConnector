@@ -41,8 +41,8 @@ connection.Close();
         {
             server = "localhost";
             database = "dbparty";
-            uid = "root";
-            password = "f6]plbmTbN";
+            uid = "partyuser";
+            password = "partyuser";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -93,7 +93,7 @@ connection.Close();
         }
         public List<string>[] Select()
         {
-            string query = "SELECT * FROM actor";
+            string query = "SELECT * FROM bank_name";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -112,8 +112,8 @@ connection.Close();
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["first_name"] + "");
-                    list[1].Add(dataReader["last_name"] + "");
+                    list[0].Add(dataReader["bank_code"] + "");
+                    list[1].Add(dataReader["bank_name"] + "");
                     list[2].Add(dataReader["last_update"] + "");
                 }
 
